@@ -1,0 +1,1161 @@
+[
+    {
+        "id": "c3289cc41a511d89",
+        "type": "tab",
+        "label": "Kurtsoa Source",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9d067caa2a68ec5c",
+        "type": "inject",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0f2992d91d9dfa0",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Egoera \"Txarra\"",
+        "func": "msg.egoera=\"Txarra\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "f84dc1447854b646"
+            ]
+        ]
+    },
+    {
+        "id": "4b04063620822e11",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Egoera \"Txarra\"",
+        "func": "msg.egoera=\"Ona\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 580,
+        "wires": [
+            [
+                "610b1b4fa7f1610e"
+            ]
+        ]
+    },
+    {
+        "id": "d3bc603915777be3",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Txarra",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "c0f2992d91d9dfa0",
+                "6aaf312a4fb3873c",
+                "61a2608472c59a07",
+                "38c39c07e21159a4",
+                "2eca328db99182ba"
+            ]
+        ]
+    },
+    {
+        "id": "4a62c28b452f41c9",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Ertaina",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "9bf01be834e56e56",
+                "9f2736222efb7cfb",
+                "72b21b22d26f243e",
+                "2653e03bb1bce561",
+                "869c8b693fdca548"
+            ]
+        ]
+    },
+    {
+        "id": "a6605d25f02ccb6b",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Ona",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "4b04063620822e11",
+                "7673005bafcbd3ed",
+                "dd1804dd81370c34",
+                "234183da3654d1a1",
+                "6bc824f0454c8fac"
+            ]
+        ]
+    },
+    {
+        "id": "799e727322ee1e3e",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Test",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 820,
+        "wires": [
+            [
+                "f19684992dc57712",
+                "f38174409ad057a4",
+                "2dbe958917e77d34",
+                "42e166c5fda5bc6f"
+            ]
+        ]
+    },
+    {
+        "id": "6aaf312a4fb3873c",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Nitrogenoa 4-10 mg/Kg",
+        "low": "4",
+        "high": 10,
+        "inte": "true",
+        "property": "nitrogenoa",
+        "x": 530,
+        "y": 20,
+        "wires": [
+            [
+                "9c018899c8a7f856"
+            ]
+        ]
+    },
+    {
+        "id": "61a2608472c59a07",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Fosforoa 3-8 mg/kg",
+        "low": "3",
+        "high": "8",
+        "inte": "true",
+        "property": "fosforoa",
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "1b0580a8e24c74b0"
+            ]
+        ]
+    },
+    {
+        "id": "38c39c07e21159a4",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Potasioa 10-40 mg/kg",
+        "low": "10",
+        "high": "40",
+        "inte": "true",
+        "property": "potasioa",
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "375b7049280d84fb"
+            ]
+        ]
+    },
+    {
+        "id": "2653e03bb1bce561",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Egoera \"Ertaina\"",
+        "func": "msg.egoera=\"Ertaina\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "3d2305b69d8610bf"
+            ]
+        ]
+    },
+    {
+        "id": "9bf01be834e56e56",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Nitrogenoa 20-40 mg/Kg",
+        "low": "20",
+        "high": "40",
+        "inte": "true",
+        "property": "nitrogenoa",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "900fa06ce3016a26"
+            ]
+        ]
+    },
+    {
+        "id": "9f2736222efb7cfb",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Fosforoa 14-20 mg/kg",
+        "low": "14",
+        "high": "20",
+        "inte": "true",
+        "property": "fosforoa",
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "62eb5cf2a79885c3"
+            ]
+        ]
+    },
+    {
+        "id": "72b21b22d26f243e",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Potasioa 60-90 mg/kg",
+        "low": "60",
+        "high": "90",
+        "inte": "true",
+        "property": "potasioa",
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "206f2f285c3729eb"
+            ]
+        ]
+    },
+    {
+        "id": "2eca328db99182ba",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Hezetasuna 5-50",
+        "low": "5",
+        "high": "50",
+        "inte": "false",
+        "property": "hezetasuna",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "2785fa5d2179e586"
+            ]
+        ]
+    },
+    {
+        "id": "234183da3654d1a1",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Potasioa 85-120 mg/kg",
+        "low": "85",
+        "high": "120",
+        "inte": "true",
+        "property": "potasioa",
+        "x": 530,
+        "y": 500,
+        "wires": [
+            [
+                "4c4d888f677364f1"
+            ]
+        ]
+    },
+    {
+        "id": "dd1804dd81370c34",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Fosforoa 20-25 mg/kg",
+        "low": "20",
+        "high": "25",
+        "inte": "true",
+        "property": "fosforoa",
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "9118f5d27eb39569"
+            ]
+        ]
+    },
+    {
+        "id": "7673005bafcbd3ed",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Nitrogenoa 38-50 mg/Kg",
+        "low": "38",
+        "high": "50",
+        "inte": "true",
+        "property": "nitrogenoa",
+        "x": 530,
+        "y": 420,
+        "wires": [
+            [
+                "b88d0e1f924dd7af"
+            ]
+        ]
+    },
+    {
+        "id": "42e166c5fda5bc6f",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Hezetasuna 5-50 m3m-3",
+        "low": "5",
+        "high": "50",
+        "inte": "false",
+        "property": "hezetasuna",
+        "x": 530,
+        "y": 880,
+        "wires": [
+            [
+                "37c573738226d3c0"
+            ]
+        ]
+    },
+    {
+        "id": "2dbe958917e77d34",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Potasioa 10-120 mg/kg",
+        "low": "10",
+        "high": "120",
+        "inte": "true",
+        "property": "potasioa",
+        "x": 530,
+        "y": 840,
+        "wires": [
+            [
+                "c9c69f7331928cfa"
+            ]
+        ]
+    },
+    {
+        "id": "f38174409ad057a4",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Fosforoa 3-25 mg/kg",
+        "low": "3",
+        "high": "25",
+        "inte": "true",
+        "property": "fosforoa",
+        "x": 520,
+        "y": 800,
+        "wires": [
+            [
+                "e0796f1cd12e1624"
+            ]
+        ]
+    },
+    {
+        "id": "f19684992dc57712",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Nitrogenoa 4-50 mg/Kg",
+        "low": "4",
+        "high": "50",
+        "inte": "true",
+        "property": "nitrogenoa",
+        "x": 530,
+        "y": 760,
+        "wires": [
+            [
+                "5511848e6656fe4b"
+            ]
+        ]
+    },
+    {
+        "id": "b599942fc855f8be",
+        "type": "inject",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e6a18cbded84dc7",
+        "type": "inject",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "120",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "a6605d25f02ccb6b"
+            ]
+        ]
+    },
+    {
+        "id": "69ff7f8947d7db60",
+        "type": "inject",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 820,
+        "wires": [
+            [
+                "799e727322ee1e3e"
+            ]
+        ]
+    },
+    {
+        "id": "d5c710c22771c939",
+        "type": "inject",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 620,
+        "wires": [
+            [
+                "4ffead44b76e77fa"
+            ]
+        ]
+    },
+    {
+        "id": "4ffead44b76e77fa",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Erromardie lat / long",
+        "func": "msg.payload = {latitude: 43.407504, longitude:- 1.640936};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 620,
+        "wires": [
+            [
+                "f1f2c74ad5917d54"
+            ]
+        ]
+    },
+    {
+        "id": "9c018899c8a7f856",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global nitrogenoa",
+        "func": "global.set(\"nitrogenoa\",msg.nitrogenoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "1b0580a8e24c74b0",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global fosforoa",
+        "func": "global.set(\"fosforoa\",msg.fosforoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "375b7049280d84fb",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global potasioa",
+        "func": "global.set(\"potasioa\",msg.potasioa);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "07d2c182875b879a"
+            ]
+        ]
+    },
+    {
+        "id": "f84dc1447854b646",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global egoera",
+        "func": "global.set(\"egoera\",msg.egoera);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "2785fa5d2179e586",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global hezetasuna",
+        "func": "global.set(\"hezetasuna\",msg.hezetasuna);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "869c8b693fdca548",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Hezetasuna 5-50",
+        "low": "5",
+        "high": "50",
+        "inte": "false",
+        "property": "hezetasuna",
+        "x": 510,
+        "y": 340,
+        "wires": [
+            [
+                "61fb94b1bfadb658"
+            ]
+        ]
+    },
+    {
+        "id": "6bc824f0454c8fac",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Hezetasuna 5-50",
+        "low": "5",
+        "high": "50",
+        "inte": "false",
+        "property": "hezetasuna",
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "f3d2ae36d216675c"
+            ]
+        ]
+    },
+    {
+        "id": "07d2c182875b879a",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Features2payload",
+        "func": "var N = global.get(\"nitrogenoa\");\nvar F = global.get(\"fosforoa\");\nvar K = global.get(\"potasioa\");\nvar H = global.get(\"hezetasuna\");\nvar E = global.get(\"egoera\");\nmsg.payload={\"Nitrogenoa\":N,\"Fosforoa\":F,\"Potasioa\":K,\"Hezetasuna\":H,\"Egoera\":E};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 100,
+        "wires": [
+            [
+                "fa39c1aea2643369"
+            ]
+        ]
+    },
+    {
+        "id": "900fa06ce3016a26",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global nitrogenoa",
+        "func": "global.set(\"nitrogenoa\",msg.nitrogenoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "62eb5cf2a79885c3",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global fosforoa",
+        "func": "global.set(\"fosforoa\",msg.fosforoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "206f2f285c3729eb",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global potasioa",
+        "func": "global.set(\"potasioa\",msg.potasioa);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 300,
+        "wires": [
+            [
+                "e95ffa0453ada16b"
+            ]
+        ]
+    },
+    {
+        "id": "61fb94b1bfadb658",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global hezetasuna",
+        "func": "global.set(\"hezetasuna\",msg.hezetasuna);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "3d2305b69d8610bf",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global egoera",
+        "func": "global.set(\"egoera\",msg.egoera);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e95ffa0453ada16b",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Features2payload",
+        "func": "var N = global.get(\"nitrogenoa\");\nvar F = global.get(\"fosforoa\");\nvar K = global.get(\"potasioa\");\nvar H = global.get(\"hezetasuna\");\nvar E = global.get(\"egoera\");\nmsg.payload={\"Nitrogenoa\":N,\"Fosforoa\":F,\"Potasioa\":K,\"Hezetasuna\":H,\"Egoera\":E};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "fa39c1aea2643369"
+            ]
+        ]
+    },
+    {
+        "id": "b88d0e1f924dd7af",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global nitrogenoa",
+        "func": "global.set(\"nitrogenoa\",msg.nitrogenoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "9118f5d27eb39569",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global fosforoa",
+        "func": "global.set(\"fosforoa\",msg.fosforoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "4c4d888f677364f1",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global potasioa",
+        "func": "global.set(\"potasioa\",msg.potasioa);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 500,
+        "wires": [
+            [
+                "a56cbfd61e8b4a44"
+            ]
+        ]
+    },
+    {
+        "id": "f3d2ae36d216675c",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global hezetasuna",
+        "func": "global.set(\"hezetasuna\",msg.hezetasuna);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "610b1b4fa7f1610e",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global egoera",
+        "func": "global.set(\"egoera\",msg.egoera);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a56cbfd61e8b4a44",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Features2payload",
+        "func": "var N = global.get(\"nitrogenoa\");\nvar F = global.get(\"fosforoa\");\nvar K = global.get(\"potasioa\");\nvar H = global.get(\"hezetasuna\");\nvar E = global.get(\"egoera\");\nmsg.payload={\"Nitrogenoa\":N,\"Fosforoa\":F,\"Potasioa\":K,\"Hezetasuna\":H,\"Egoera\":E};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 500,
+        "wires": [
+            [
+                "fa39c1aea2643369"
+            ]
+        ]
+    },
+    {
+        "id": "5511848e6656fe4b",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global nitrogenoa",
+        "func": "global.set(\"nitrogenoa\",msg.nitrogenoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "e0796f1cd12e1624",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global fosforoa",
+        "func": "global.set(\"fosforoa\",msg.fosforoa);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c9c69f7331928cfa",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global potasioa",
+        "func": "global.set(\"potasioa\",msg.potasioa);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 840,
+        "wires": [
+            [
+                "32c2b60a6393fcb0"
+            ]
+        ]
+    },
+    {
+        "id": "37c573738226d3c0",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "global hezetasuna",
+        "func": "global.set(\"hezetasuna\",msg.hezetasuna);\nreturn msg;",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "32c2b60a6393fcb0",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Features2payload",
+        "func": "var N = global.get(\"nitrogenoa\");\nvar F = global.get(\"fosforoa\");\nvar K = global.get(\"potasioa\");\nvar H = global.get(\"hezetasuna\");\nvar E = global.get(\"egoera\");\nmsg.payload={\"Nitrogenoa\":N,\"Fosforoa\":F,\"Potasioa\":K,\"Hezetasuna\":H,\"Egoera\":E};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa39c1aea2643369",
+        "type": "mqtt out",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "topic": "tknika/kurtsoa/baratza",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cb216faf.d9136",
+        "x": 1300,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f1f2c74ad5917d54",
+        "type": "mqtt out",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "topic": "tknika/kurtsoa/kokapena",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cb216faf.d9136",
+        "x": 1290,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "4a3c3f306ed6b282",
+        "type": "random",
+        "z": "c3289cc41a511d89",
+        "name": "Volataia 9-12 V",
+        "low": "9",
+        "high": "12",
+        "inte": "false",
+        "property": "payload",
+        "x": 500,
+        "y": 680,
+        "wires": [
+            [
+                "88bb745e51f8a8d1"
+            ]
+        ]
+    },
+    {
+        "id": "444a50039a6fcdc7",
+        "type": "inject",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "4a3c3f306ed6b282"
+            ]
+        ]
+    },
+    {
+        "id": "88bb745e51f8a8d1",
+        "type": "function",
+        "z": "c3289cc41a511d89",
+        "name": "Voltaia",
+        "func": "msg.payload = {\"Voltaia\": msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 680,
+        "wires": [
+            [
+                "64c03da52c4e0262"
+            ]
+        ]
+    },
+    {
+        "id": "64c03da52c4e0262",
+        "type": "mqtt out",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "topic": "tknika/kurtsoa/bateria",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cb216faf.d9136",
+        "x": 1280,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "7280559312128c3e",
+        "type": "mqtt out",
+        "z": "c3289cc41a511d89",
+        "name": "",
+        "topic": "tknika/kurtsoa/baratza",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cb216faf.d9136",
+        "x": 1280,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "cb216faf.d9136",
+        "type": "mqtt-broker",
+        "name": "broker.hivemq.com",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

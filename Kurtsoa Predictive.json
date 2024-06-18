@@ -1,0 +1,454 @@
+[
+    {
+        "id": "1f9f2c201adfced1",
+        "type": "tab",
+        "label": "Predictive Kurtsoa",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "44b6f4b0.34d7dc",
+        "type": "load dataset",
+        "z": "1f9f2c201adfced1",
+        "name": "",
+        "datasetFolder": "",
+        "datasetName": "Digitalizazioa",
+        "partition": "train.csv",
+        "input": true,
+        "output": true,
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "26110acb.cbf526"
+            ],
+            [
+                "86385870.9f6b88"
+            ]
+        ]
+    },
+    {
+        "id": "d3e9e7ab.a06d68",
+        "type": "inject",
+        "z": "1f9f2c201adfced1",
+        "name": "start",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "44b6f4b0.34d7dc"
+            ]
+        ]
+    },
+    {
+        "id": "b21982e2.99cf1",
+        "type": "inject",
+        "z": "1f9f2c201adfced1",
+        "name": "start",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 420,
+        "wires": [
+            [
+                "f1b47338.aab82",
+                "1ea9f445.89d0bc"
+            ]
+        ]
+    },
+    {
+        "id": "86385870.9f6b88",
+        "type": "debug",
+        "z": "1f9f2c201adfced1",
+        "name": "error",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1070,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2270c854.c34e08",
+        "type": "debug",
+        "z": "1f9f2c201adfced1",
+        "name": "print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e69a3271.c7cab",
+        "type": "predictor",
+        "z": "1f9f2c201adfced1",
+        "name": "decision tree classifier predictor",
+        "modelPath": "test/models",
+        "modelName": "dtc.b",
+        "x": 870,
+        "y": 400,
+        "wires": [
+            [
+                "b8f2ab19.e693a8"
+            ],
+            [
+                "f7c59de2.be773"
+            ]
+        ]
+    },
+    {
+        "id": "26110acb.cbf526",
+        "type": "decision tree classifier",
+        "z": "1f9f2c201adfced1",
+        "name": "decision tree classifier trainer",
+        "savePath": "test/models",
+        "saveName": "dtc.b",
+        "maxDepth": "",
+        "criterion": "gini",
+        "splitter": "best",
+        "x": 840,
+        "y": 160,
+        "wires": [
+            [
+                "2270c854.c34e08"
+            ],
+            [
+                "86385870.9f6b88"
+            ]
+        ]
+    },
+    {
+        "id": "b8f2ab19.e693a8",
+        "type": "assessment",
+        "z": "1f9f2c201adfced1",
+        "name": "",
+        "score": "accuracy_score",
+        "x": 910,
+        "y": 320,
+        "wires": [
+            [
+                "808a0c93.8ee38"
+            ],
+            [
+                "f7c59de2.be773"
+            ]
+        ]
+    },
+    {
+        "id": "f1b47338.aab82",
+        "type": "load dataset",
+        "z": "1f9f2c201adfced1",
+        "name": "",
+        "datasetFolder": "",
+        "datasetName": "Digitalizazioa",
+        "partition": "test.csv",
+        "input": false,
+        "output": true,
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "b8f2ab19.e693a8"
+            ],
+            [
+                "f7c59de2.be773"
+            ]
+        ]
+    },
+    {
+        "id": "1ea9f445.89d0bc",
+        "type": "load dataset",
+        "z": "1f9f2c201adfced1",
+        "name": "",
+        "datasetFolder": "",
+        "datasetName": "Digitalizazioa",
+        "partition": "test.csv",
+        "input": true,
+        "output": false,
+        "x": 610,
+        "y": 460,
+        "wires": [
+            [
+                "e69a3271.c7cab"
+            ],
+            [
+                "f7c59de2.be773"
+            ]
+        ]
+    },
+    {
+        "id": "f7c59de2.be773",
+        "type": "debug",
+        "z": "1f9f2c201adfced1",
+        "name": "error",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1150,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "808a0c93.8ee38",
+        "type": "debug",
+        "z": "1f9f2c201adfced1",
+        "name": "print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1090,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "8a4ea95c.f860b8",
+        "type": "predictor",
+        "z": "1f9f2c201adfced1",
+        "name": "decision tree classifier predictor",
+        "modelPath": "test/models",
+        "modelName": "dtc.b",
+        "x": 690,
+        "y": 720,
+        "wires": [
+            [
+                "7ea39c0de8822712"
+            ],
+            [
+                "e66df10b.40ba8"
+            ]
+        ]
+    },
+    {
+        "id": "e66df10b.40ba8",
+        "type": "debug",
+        "z": "1f9f2c201adfced1",
+        "name": "error",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 930,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7724789fb01bd811",
+        "type": "debug",
+        "z": "1f9f2c201adfced1",
+        "name": "Aurrikuspena",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ff6d3ffa8efdfd2a",
+        "type": "mqtt in",
+        "z": "1f9f2c201adfced1",
+        "name": "",
+        "topic": "tknika/kurtsoa/baratza",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cb216faf.d9136",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 160,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0cfee9c19a0c077a",
+        "type": "function",
+        "z": "1f9f2c201adfced1",
+        "name": "telemetri2matrix",
+        "func": "var H=msg.payload.Hezetasuna;\nvar N=msg.payload.Nitrogenoa;\nvar F=msg.payload.Fosforoa;\nvar P=msg.payload.Potasioa;\n\nlet telemetria = [\n  [H, N,F,P]];\n\nmsg.payload=telemetria;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "8a4ea95c.f860b8"
+            ]
+        ]
+    },
+    {
+        "id": "7ea39c0de8822712",
+        "type": "function",
+        "z": "1f9f2c201adfced1",
+        "name": "matrix2thingsboard",
+        "func": "msg.payload={\"Aurrikuspena\":msg.payload[0]}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 700,
+        "wires": [
+            [
+                "7724789fb01bd811"
+            ]
+        ]
+    },
+    {
+        "id": "a241ede95b4d0855",
+        "type": "comment",
+        "z": "1f9f2c201adfced1",
+        "name": "Modeloa Entrenatu",
+        "info": "",
+        "x": 410,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f9843b36e20501d1",
+        "type": "comment",
+        "z": "1f9f2c201adfced1",
+        "name": "Modeloa Test-eatu",
+        "info": "",
+        "x": 430,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "987aac775c030f4f",
+        "type": "comment",
+        "z": "1f9f2c201adfced1",
+        "name": "Aurrikuspena egin",
+        "info": "",
+        "x": 450,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "24085d1125b640a0",
+        "type": "mqtt out",
+        "z": "1f9f2c201adfced1",
+        "name": "",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "504330777c7f1f3a",
+        "x": 1370,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "cb216faf.d9136",
+        "type": "mqtt-broker",
+        "name": "broker.hivemq.com",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "504330777c7f1f3a",
+        "type": "mqtt-broker",
+        "name": "thingsboard.tknika.eus (Device2024)",
+        "broker": "thingsboard.tknika.eus",
+        "port": "8883",
+        "tls": "ebdbdd68180a84e5",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ebdbdd68180a84e5",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    }
+]
